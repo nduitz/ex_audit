@@ -31,7 +31,7 @@ defmodule ExAudit.Type.Schema do
   defp get_schema_by_table(table) do
     schemas()
     |> Enum.find(fn schema ->
-      schema.__schema__(:source) == table
+      schema.__schema__(:source) == table.__schema__(:source)
     end)
   end
 
